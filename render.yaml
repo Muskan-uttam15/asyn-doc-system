@@ -1,0 +1,32 @@
+services:
+  - type: web
+    name: docflow-api
+    runtime: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: docflow-db
+          property: connectionString
+      - key: REDIS_URL
+        fromService:
+          name: docflow-redis
+          type: redis
+          property: connectionString
+
+  - type: worker
+    name: docflow-worker
+    runtime: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: celery -A app.workers.celery_app worker --loglevel=info
+
+databases:
+  - name: docflow-db
+    plan: free
+
+  - name: docflow-redis
+    plan: free
+    ipAllowList: []
