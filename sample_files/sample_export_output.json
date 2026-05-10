@@ -1,0 +1,37 @@
+{
+  "job_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+  "document": {
+    "id": "f9e8d7c6-b5a4-3210-fedc-ba9876543210",
+    "original_filename": "q3_financial_summary.txt",
+    "file_size": 712,
+    "mime_type": "text/plain",
+    "created_at": "2024-10-15T14:32:01.123456"
+  },
+  "result": {
+    "filename": "q3_financial_summary.txt",
+    "extension": ".txt",
+    "mime_type": "text/plain",
+    "file_size_bytes": 712,
+    "raw_text_preview": "Q3 2024 Financial Summary\n=========================\n\nRevenue: $4.2M",
+    "line_count": 28,
+    "char_count": 712,
+    "title": "Q3 Financial Summary",
+    "category": "Plain Text",
+    "summary": "Q3 2024 Financial Summary\n=========================\n\nRevenue: $4.2M (↑18% YoY)\nOperating Expenses...",
+    "keywords": ["financial", "summary", "q3"],
+    "language": "en",
+    "page_count": null,
+    "word_count": 118,
+    "extraction_confidence": 0.941,
+    "processing_notes": [
+      "Processed at 2024-10-15T14:32:05.887Z",
+      "File type: Plain Text"
+    ],
+    "metadata": {
+      "file_size_bytes": 712,
+      "mime_type": "text/plain",
+      "extension": ".txt"
+    }
+  },
+  "finalized_at": "2024-10-15T14:35:22.456789"
+}

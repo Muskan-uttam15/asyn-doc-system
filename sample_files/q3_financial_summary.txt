@@ -1,0 +1,26 @@
+Q3 2024 Financial Summary
+=========================
+
+Revenue: $4.2M (↑18% YoY)
+Operating Expenses: $2.8M
+Net Income: $1.4M
+EBITDA Margin: 34%
+
+Key Highlights:
+- Enterprise ARR grew to $3.1M
+- Churn rate held at 2.1%
+- 47 new enterprise customers onboarded
+- Product team shipped 3 major feature releases
+
+Top performing segments:
+1. Enterprise SaaS: $2.1M
+2. Professional Services: $1.1M
+3. Marketplace fees: $1.0M
+
+Headcount: 68 FTEs (up from 54)
+Cash position: $6.8M runway (~18 months at current burn)
+
+Next quarter targets:
+- Revenue: $4.8M
+- New logos: 55+
+- Headcount: 75

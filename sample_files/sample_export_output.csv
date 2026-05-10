@@ -1,0 +1,15 @@
+field,value
+job_id,a1b2c3d4-e5f6-7890-abcd-ef1234567890
+filename,q3_financial_summary.txt
+finalized_at,2024-10-15T14:35:22.456789
+title,Q3 Financial Summary
+category,Plain Text
+summary,"Q3 2024 Financial Summary..."
+keywords,"[""financial"", ""summary"", ""q3""]"
+language,en
+page_count,
+word_count,118
+extraction_confidence,0.941
+file_size_bytes,712
+mime_type,text/plain
+extension,.txt
