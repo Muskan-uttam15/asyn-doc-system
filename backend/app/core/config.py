@@ -12,6 +12,23 @@ class Settings(BaseSettings):
     max_upload_size_mb: int = 50
     secret_key: str = "super-secret-key-change-in-production"
 
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        # Render gives postgres:// — fix it for asyncpg
+        if self.database_url.startswith("postgres://"):
+            object.__setattr__(
+                self,
+                "database_url",
+                self.database_url.replace("postgres://", "postgresql+asyncpg://", 1)
+            )
+        # Also fix sync URL
+        if self.database_url.startswith("postgresql+asyncpg://"):
+            object.__setattr__(
+                self,
+                "sync_database_url",
+                self.database_url.replace("postgresql+asyncpg://", "postgresql://", 1)
+            )
+
     class Config:
         env_file = ".env"
 
