@@ -17,6 +17,12 @@ celery_app.conf.update(
     task_track_started=True,
     task_acks_late=True,
     worker_prefetch_multiplier=1,
+    broker_use_ssl={
+        "ssl_cert_reqs": "required"
+    } if settings.celery_broker_url.startswith("rediss://") else None,
+    redis_backend_use_ssl={
+        "ssl_cert_reqs": "required"
+    } if settings.celery_result_backend.startswith("rediss://") else None,
     task_routes={
         "app.workers.tasks.process_document": {"queue": "documents"},
     },
