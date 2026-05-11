@@ -1,15 +1,18 @@
-def _fix_sync_url(url: str) -> str:
-    if url.startswith("postgres://"):
-        return url.replace("postgres://", "postgresql://", 1)
-    if url.startswith("postgresql+asyncpg://"):
-        return url.replace("postgresql+asyncpg://", "postgresql://", 1)
-    return url
+from __future__ import annotations
 
+import os
+import time
+import json
+import uuid
+import random
+import string
+from datetime import datetime
 
-def get_sync_session() -> Session:
-    global _engine, _SessionLocal
-    if _engine is None:
-        sync_url = _fix_sync_url(settings.sync_database_url or settings.database_url)
-        _engine = create_engine(sync_url, pool_pre_ping=True)
-        _SessionLocal = sessionmaker(bind=_engine)
-    return _SessionLocal()
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker, Session
+from sqlalchemy.orm import Session
+
+from app.workers.celery_app import celery_app
+from app.core.config import settings
+from app.core.redis_client import publish_progress
+from app.models.document import ProcessingJob, Document, JobStatus
